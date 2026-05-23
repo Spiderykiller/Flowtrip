@@ -86,7 +86,7 @@ export default function Community() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as const}}
             className="max-w-3xl mx-auto text-center"
           >
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-white/80 rounded-full px-4 py-2 text-sm mb-8 border border-white/10 font-mono">

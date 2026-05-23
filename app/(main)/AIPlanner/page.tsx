@@ -282,7 +282,7 @@ function AIPlannerInner() {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ delay: 0.2, duration: 0.6, ease: [0.22, 1, 0.36, 1] as const}}
             className="flex flex-col bg-[#F0F4F8] rounded-3xl overflow-hidden shadow-2xl"
             style={{ height: "640px", minHeight: "540px" }}
           >

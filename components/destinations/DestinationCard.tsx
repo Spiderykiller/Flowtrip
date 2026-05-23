@@ -27,7 +27,7 @@ export default function DestinationCard({ destination, index }: DestinationCardP
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] as const }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="group relative flex-shrink-0 w-[340px] md:w-[400px] lg:w-[460px] h-[520px] md:h-[580px] rounded-3xl overflow-hidden cursor-pointer"
@@ -38,7 +38,7 @@ export default function DestinationCard({ destination, index }: DestinationCardP
         alt={destination.alt}
         className="absolute inset-0 w-full h-full object-cover"
         animate={{ scale: isHovered ? 1.05 : 1 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }}
       />
 
       {/* Gradient overlay */}

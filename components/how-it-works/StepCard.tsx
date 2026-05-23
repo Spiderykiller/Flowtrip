@@ -16,7 +16,7 @@ export default function StepCard({ step, index }: StepCardProps) {
       initial={{ opacity: 0, x: 40 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] as const}}
       className="relative pl-12 md:pl-16 pb-12 last:pb-0"
     >
       {/* Vertical line */}

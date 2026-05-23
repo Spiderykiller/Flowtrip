@@ -95,7 +95,7 @@ export default function Home() {
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ delay: 0.35, duration: 0.7, ease: [0.22, 1, 0.36, 1] as const}}
               className="mb-6 font-display text-5xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-8xl"
             >
               Explore the
