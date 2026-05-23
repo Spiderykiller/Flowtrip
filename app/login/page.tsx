@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '@/lib/AuthContext';
 import { base44 } from '@/lib/base44Client';
@@ -8,7 +8,7 @@ import { base44 } from '@/lib/base44Client';
 type FormState = 'idle' | 'submitting' | 'oauth_redirecting';
 type Step = 'login' | 'verify';
 
-export default function LoginPage() {
+function LoginInner() {
   const { isAuthenticated, isLoading, loginWithPassword, refresh } = useAuth();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -354,6 +354,14 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<FullScreenLoader />}>
+      <LoginInner />
+    </Suspense>
   );
 }
 
